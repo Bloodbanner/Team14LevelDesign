@@ -38,4 +38,3 @@ public class WeaponController : MonoBehaviour
     }
 
 }
-S
