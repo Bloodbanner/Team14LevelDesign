@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-
+    [SerializeField] private GameObject meleePrefab;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootinStartPostion;
     [SerializeField] private GameObject attackIndicatorPrefab;
@@ -31,9 +31,10 @@ public class Attacking : MonoBehaviour
             {
                 Attack();
                 m_Animator.SetTrigger("AttackMelee");
+                
             }
-           
-           
+
+
         }
     }
 
@@ -47,7 +48,8 @@ public class Attacking : MonoBehaviour
     }
     public void Attack()
     {
-
+        GameObject newProjectile = Instantiate(meleePrefab, shootinStartPostion.position, shootinStartPostion.rotation);       
+        Destroy(newProjectile, 0.5f);
     }
 
 }
