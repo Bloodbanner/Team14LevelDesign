@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public float maxhealth = 100;
+    public float currentHealth = 100;
+
+    public int damage;
+
     // Start is called before the first frame update
     void Start()
     {

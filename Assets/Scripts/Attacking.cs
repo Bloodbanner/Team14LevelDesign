@@ -4,15 +4,50 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform shootinStartPostion;
+    [SerializeField] private GameObject attackIndicatorPrefab;
+    [SerializeField] private Animator m_Animator;
+
+    [SerializeField] Inventory inventory;
+
+    public void Update()
     {
-        
+        //Fire
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if(inventory.equippedItem == 1)
+            {
+                if(inventory.bullets>= 1)
+                {
+                    Fire();
+                    m_Animator.SetTrigger("Shoot");
+                    inventory.bullets = inventory.bullets - 1;
+                }
+                
+            }
+            if (inventory.equippedItem == 2 || inventory.equippedItem == 3 || inventory.equippedItem == 4)
+            {
+                Attack();
+                m_Animator.SetTrigger("AttackMelee");
+            }
+           
+           
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Fire()
     {
-        
+        {
+            GameObject newProjectile = Instantiate(projectilePrefab, shootinStartPostion.position, shootinStartPostion.rotation);
+            GameObject attackIndicator = Instantiate(attackIndicatorPrefab, shootinStartPostion.position, shootinStartPostion.rotation);
+            Destroy(attackIndicator, 0.2f);          
+        }
     }
+    public void Attack()
+    {
+
+    }
+
 }
