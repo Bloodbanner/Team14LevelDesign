@@ -19,6 +19,11 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth >= 100)
+        {
+
+            Destroy(this, 3);
+                        
+        }
     }
 }

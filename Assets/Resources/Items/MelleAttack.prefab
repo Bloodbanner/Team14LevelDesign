@@ -129,5 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRB: {fileID: 5400000}
-  bulletSpeed: 40
-  damageIndicatorsPrefab: {fileID: 0}
+  bulletSpeed: 15
+  damageIndicatorsPrefab: {fileID: 100000, guid: 4560e456c4ec0d3418fffd368dd1e7ff,
+    type: 3}

@@ -49,7 +49,8 @@ public class Attacking : MonoBehaviour
     public void Attack()
     {
         GameObject newProjectile = Instantiate(meleePrefab, shootinStartPostion.position, shootinStartPostion.rotation);       
-        Destroy(newProjectile, 0.5f);
+        Destroy(newProjectile, 0.7f);
+      
     }
 
 }
