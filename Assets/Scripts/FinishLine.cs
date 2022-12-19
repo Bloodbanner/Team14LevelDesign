@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider cother)
+    private void OnTriggerEnter(Collider other)
     {
-        if(cother.gameObject.name == "Player")
+        if(other.gameObject.name == "End")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
